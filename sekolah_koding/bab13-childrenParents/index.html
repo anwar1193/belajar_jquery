@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children - Parents</title>
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+
+        <!-- row pertama -->
+        <div class="row-1">
+            <h1>Row Pertama</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, autem asperiores modi consectetur alias illum tenetur hic soluta quos error.
+            </p>
+        </div>
+
+        <!-- row kedua -->
+        <div class="row-2">
+            <h1>Row Kedua</h1>
+            <p class="paragraf2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam velit quaerat eius corrupti amet iure sequi ullam tenetur, incidunt neque?
+            </p>
+        </div>
+
+        <!-- row ketiga -->
+        <div class="row-3">
+            <h1>Row Ketiga</h1>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae, similique. Expedita voluptates animi hic nam ullam suscipit, vel nemo porro?
+                <span class="tulisan-figuran">Aku figuraan</span>
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.container').children().css('backgroundColor', 'red');
+
+            $('.row-1').find('p').css('color', 'white');
+
+            $('.paragraf2').parent().css('fontSize', '40px');  // ganti2 dengan parents untuk liat efek nya
+
+            $('.tulisan-figuran').parentsUntil('.container').css('color', 'violet');
+
+        });
+    </script>
+</body>
+</html>

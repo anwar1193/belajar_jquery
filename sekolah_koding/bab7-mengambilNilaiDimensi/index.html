@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengambil Nilai Dimensi</title>
+    <style>
+        .kotak{
+            width: 150px;
+            height: 150px;
+            background-color: salmon;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .kotak2{
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            border: 10px solid salmon;
+            background-color: orange;
+            text-align: center;
+            line-height: 150px;
+            margin: 5px;
+        }
+    </style>
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+    
+    <div class="kotak">KOTAK 150px</div>
+    <span>Width : 150px</span>
+
+    <br><br>
+
+    <button id="hitungNilaiKotak">Hitung Nilai Kotak</button><br><br>
+    <span id="tampilNilaiKotak">Nilai Dimensi Kotak</span>
+
+    <br><br><br>
+
+    <div class="kotak2">KOTAK2 200px</div>
+    <span>Width:150px, Padding:10px, Border:10px, Margin:5px</span>
+
+    <br><br>
+
+    <button id="hitungNilaiKotak2">Hitung Nilai Kotak 2</button><br><br>
+    <span id="tampilNilaiKotak2">Nilai Dimensi Kotak 2</span>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#hitungNilaiKotak').click(function(){
+                let nilaiKotak = $('.kotak').width();
+                $('#tampilNilaiKotak').text(nilaiKotak);
+            });
+
+            $('#hitungNilaiKotak2').click(function(){
+                let nilaiKotak2 = $('.kotak2').outerWidth(true);
+                $('#tampilNilaiKotak2').text(nilaiKotak2);
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Selection</title>
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+    
+    <h1>Tag HTML</h1>
+
+    <p id="paragrafID">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis ab quaerat commodi veniam ipsa provident nesciunt quibusdam, voluptatem dolores! Cum ex, blanditiis nostrum, earum vitae hic quam facilis dolore sequi ipsum praesentium soluta illum nisi molestiae dolor deserunt tenetur quo! Fuga, minima neque. Aliquid necessitatibus quis provident id hic aliquam!
+    </p>
+
+    <p class="paragrafClass">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto cum fuga quasi quos culpa, dolorum sint, ab perspiciatis labore delectus, possimus cupiditate necessitatibus reiciendis tempore voluptates ex neque in? Deleniti maxime minima qui animi at consectetur autem delectus natus. Maiores, ea velit. Quasi non dolores at incidunt alias ipsa consequuntur.
+    </p>
+
+    <ul>
+        <li class="list">List-1</li>
+        <li class="list">List-2</li>
+        <li class="list">List-3</li>
+        <li class="list">List-4</li>
+        <li class="list">List-5</li>
+        <li class="list">List-6</li>
+        <li class="list">List-7</li>
+        <li class="list">List-8</li>
+        <li class="list">List-9</li>
+        <li class="list">List-10</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $('h1').css('color','red');
+
+            $('#paragrafID').css('color', 'blue');
+
+            $('.paragrafClass').css('color', 'orange');
+
+            $('.list:first').css('color', 'green');
+            $('.list:last').css('color', 'red');
+            $('.list:eq(4)').css('color', 'violet');
+        });
+    </script>
+
+</body>
+</html>

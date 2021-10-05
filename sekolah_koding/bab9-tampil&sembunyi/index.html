@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menampilkan & Menyembunyikan</title>
+    <style>
+        .kotakHideShow{
+            width: 150px;
+            height: 150px;
+            background-color: lightgreen;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .fadeInOut{
+            margin-top: 20px;
+        }
+
+        .kotakFadeInOut{
+            width: 150px;
+            height: 150px;
+            background-color: violet;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .slideDownUp{
+            margin-top: 20px;
+        }
+
+        .kotakSlideDownUp{
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+            margin-top: 5px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+
+    </style>
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+
+    <div class="hideShow">
+        <button id="tombolHide">Hide</button>
+        <button id="tombolShow">Show</button>
+        <button id="tombolToggle">Toggle</button>
+
+        <div class="kotakHideShow">Kotak HideShow</div>
+    </div>
+
+    <div class="fadeInOut">
+        <button id="tombolFadeIn">Fade In</button>
+        <button id="tombolFadeOut">Fade Out</button>
+        <button id="tombolFadeToggle">Fade Toggle</button>
+        <button id="tombolFadeTo">Fade To</button>
+
+        <div class="kotakFadeInOut">Kotak FadeInOut</div>
+    </div>
+
+    <div class="slideDownUp">
+        <button id="tombolSlideDown">Slide Down</button>
+        <button id="tombolSlideUp">Slide Up</button>
+        <button id="tombolSlideToggle">Slide Toggle</button>
+
+        <div class="kotakSlideDownUp">Kotak SlideDownUp</div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#tombolHide').click(function(){
+                $('.kotakHideShow').hide();
+            });
+
+            $('#tombolShow').click(function(){
+                $('.kotakHideShow').show();
+            });
+
+            $('#tombolToggle').click(function(){
+                $('.kotakHideShow').toggle();
+            });
+
+            $('#tombolFadeIn').click(function(){
+                $('.kotakFadeInOut').fadeIn(1000);
+            });
+
+            $('#tombolFadeOut').click(function(){
+                $('.kotakFadeInOut').fadeOut(1000);
+            });
+
+            $('#tombolFadeToggle').click(function(){
+                $('.kotakFadeInOut').fadeToggle(1000);
+            });
+
+            $('#tombolFadeTo').click(function(){
+                $('.kotakFadeInOut').fadeTo(1000, 0.5);
+            });
+
+            $('#tombolSlideDown').click(function(){
+                $('.kotakSlideDownUp').slideDown(1000);
+            });
+
+            $('#tombolSlideUp').click(function(){
+                $('.kotakSlideDownUp').slideUp(1000);
+            });
+
+            $('#tombolSlideToggle').click(function(){
+                $('.kotakSlideDownUp').slideToggle(1000);
+            });
+
+        });
+    </script>
+</body>
+</html>

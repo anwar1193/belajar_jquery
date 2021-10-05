@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pada jquery</title>
+
+    <style>
+        h1{
+            cursor: pointer;
+        }
+
+        .kotak{
+            width : 200px;
+            height : 200px;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            background-color: salmon;
+            margin-top: 100px;
+            margin-bottom: 20px;
+        }
+
+        .ubah_bulat{
+            border-radius: 50%;
+        }
+
+    </style>
+
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+
+    <h1>
+        Tulisan Ini Terpengaruh CSS yang ditulis di Jquery Langsung, coba klik deh
+    </h1>
+
+    <div class="kotak">
+        KOTAK
+    </div>
+
+    <button id="ubahBulat">Ubah Kotak Jadi Bulat</button>
+    <button id="ubahKotak">Ubah Bulat Jadi Kotak</button>
+    <button id="ubahBolakBalik">Ubah Bolak Balik</button>
+
+    <script>
+        $(document).ready(function(){
+
+            $('h1').click(function(){
+                $(this).css({
+                    'backgroundColor' : 'yellow',
+                    'color' : 'white',
+                    'fontSize' : '25px'
+                });
+            })
+
+            $('#ubahBulat').click(function(){
+                $('.kotak').addClass('ubah_bulat');
+            });
+
+            $('#ubahKotak').click(function(){
+                $('.kotak').removeClass('ubah_bulat');
+            });
+
+            $('#ubahBolakBalik').click(function(){
+                $('.kotak').toggleClass('ubah_bulat');
+            });
+            
+        });
+    </script>
+</body>
+</html>

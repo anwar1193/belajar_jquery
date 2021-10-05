@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop, Callback, Chaining</title>
+    <style>
+        .kotak{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../../jquery.js">
+
+    </script>
+</head>
+<body>
+    
+    <button id="tombolSlideToggle">Slide Toggle</button>
+    <button id="tombolStop">Stop</button>
+    <button id="tombolCallback">Callback</button>
+    <button id="tombolChaining">Chaining</button>
+
+    <div class="kotak">
+        KOTAK
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#tombolSlideToggle').click(function(){
+                $('.kotak').slideToggle(2000);
+            });
+
+            $('#tombolStop').click(function(){
+                $('.kotak').stop();
+            });
+
+            $('#tombolCallback').click(function(){
+                $('.kotak').fadeOut(1000, function(){
+                    $('.kotak').slideDown(1000, function(){
+                        alert('Animasi Callback Selesai');
+                    });
+                });
+            });
+
+            $('#tombolChaining').click(function(){
+                $('.kotak').slideUp(1000).slideDown(1000).fadeOut(1000).fadeIn(1000);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
