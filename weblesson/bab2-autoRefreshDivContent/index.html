@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Refresh Div Content</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../../jquery.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Halaman Chatting</h1>
+
+        <form method="post" action="">
+            <textarea name="chat" id="chat" cols="100" rows="7"></textarea>
+        </form>
+
+        <button id="tombol_chat" class="tombol_chat" name="tombol_chat">Kirim Chat</button>
+
+        <div id="tampil_chat" class="tampil_chat">
+
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+
+            $('#tombol_chat').click(function(){
+                let chat = $('#chat').val();
+                
+                // trim() digunakan untuk menghapus spasi yang ada
+                if($.trim(chat) != ''){
+                    $.ajax({
+                        url : "insert.php",
+                        method : "POST",
+                        data : {isi_chat:chat},
+                        dataType : "text",
+                        success:function(data){
+                            // Perintah tambahan jika proses berhasil
+                            $('#chat').val("");
+                        }
+                    });
+                }
+
+            });
+
+            // Fungsi untuk menampilkan isi chat, dan refresh setiap 1 menit (menggunakan interval)
+            setInterval(function(){
+                $('#tampil_chat').load('data_chat.php').fadeIn('slow');
+            }, 1000);
+
+        });
+    </script>
+
+</body>
+</html>

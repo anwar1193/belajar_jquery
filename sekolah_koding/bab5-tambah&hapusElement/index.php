@@ -46,7 +46,7 @@
     <script>
         $(document).ready(function(){
             $('#tambahInputan').click(function(){
-                $('#multipleInput').append('<span class="item">Barang : <input type="text"><br></span> ');
+                $('#multipleInput').append('<span class="item">Barang : <input type="text" value="<?php echo 'Halo' ?>"><br></span> ');
             });
 
             $('#hapusInputan').click(function(){

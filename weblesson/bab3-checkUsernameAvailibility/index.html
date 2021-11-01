@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Username Availibility</title>
+</head>
+<body>
+    <label for="username">Masukkan Username : </label>
+    <input type="text" name="username" id="username" autocomplete="off"> <br>
+    <span id="pesanUsername" style="margin-top: 10px; display: inline-block;"></span>
+</body>
+</html>
+
+<script src="../../jquery.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#username').keyup(function(){
+            let user_name = $(this).val();
+
+            $.ajax({
+                url : 'cek_username.php',
+                method : 'post',
+                data : {username : user_name},
+                dataType : 'text',
+                success : function(result){
+                    $('#pesanUsername').html(result);
+                }
+            });
+        });
+    });
+</script>

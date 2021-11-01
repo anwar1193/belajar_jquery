@@ -1,0 +1,45 @@
+body{
+    background-color: #ddd;
+}
+
+.container{
+    width: 60%;
+    background-color: white;
+    padding: 20px;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 20px;
+}
+
+h1{
+    color: #444;
+}
+
+textarea{
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.tombol_chat{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: lightgreen;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+
+.tombol_chat:hover{
+    cursor: pointer;
+    background-color: orange;
+}
+
+.tampil_chat{
+    width: 70%;
+    background-color: #eee;
+    padding: 20px;
+    margin: 20px auto;
+}
