@@ -13,14 +13,17 @@
             <td>NIK</td>
             <td>Nama</td>
             <td>Tahun Masuk</td>
+            <td>Saldo</td>
             <td>Action</td>
         </tr>
     ';
 
     if(mysqli_num_rows($result) > 0){
 
+        $total_saldo = 0;
         $no=0;
         while($row = mysqli_fetch_array($result)){
+            $total_saldo += $row['saldo'];
             $no++;
             $output .= '
                 <tr style="text-align:center">
@@ -28,8 +31,9 @@
                     <td>'.$row["nik"].'</td>
                     <td contenteditable class="nama" data-id1="'.$row["id"].'">'.$row["nama"].'</td>
                     <td contenteditable class="tahun_masuk" data-id2="'.$row["id"].'">'.$row["tahun_masuk"].'</td>
+                    <td contenteditable class="saldo" data-id3="'.$row["id"].'">'.$row["saldo"].'</td>
                     <td>
-                        <button style="background-color:red; color:white" id="btn-delete" data-id3="'.$row['id'].'">Hapus</button>
+                        <button style="background-color:red; color:white" id="btn-delete" data-id4="'.$row['id'].'">Hapus</button>
                     </td>
                 </tr>
             ';
@@ -41,9 +45,14 @@
                 <td id="nik" contenteditable></td>
                 <td id="nama" contenteditable></td>
                 <td id="tahun_masuk" contenteditable></td>
+                <td id="saldo" contenteditable></td>
                 <td style="text-align:center">
                     <button id="btn-add" style="background-color:green; color:white">Simpan</button>
                 </td>
+            </tr>
+
+            <tr>
+                <td colspan="6">TOTAL : '.$total_saldo.'</td>
             </tr>
         ';
 
